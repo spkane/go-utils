@@ -9,7 +9,7 @@ import (
 )
 
 func JsonJoin(values []string) string {
-  s := []string{values[0], values[1], " : ", values[2], "\n"}
+  s := []string{values[0], values[1], " : ", values[2], ",\n"}
   return strings.Join(s, "")
 }
 
@@ -40,7 +40,7 @@ func JsonBuild(input interface{}, debug bool) string {
   }
 
   json = strutils.TrimSuffix(json, ",\n")
-  json += "}"
+  json += "\n}"
 
   return json
 }
